@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/globalmessages",
+      "handler": "globalmessage.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/globalmessages/count",
+      "handler": "globalmessage.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/globalmessages/:id",
+      "handler": "globalmessage.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/globalmessages",
+      "handler": "globalmessage.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/globalmessages/:id",
+      "handler": "globalmessage.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/globalmessages/:id",
+      "handler": "globalmessage.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

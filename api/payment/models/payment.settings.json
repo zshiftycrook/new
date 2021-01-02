@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "payments",
+  "info": {
+    "name": "Payment"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "starting": {
+      "type": "date",
+      "default": "2020-12-01T09:00:00.000Z",
+      "required": true
+    },
+    "ends": {
+      "type": "date",
+      "default": "2020-12-01T09:00:00.000Z"
+    },
+    "rental": {
+      "model": "rental"
+    },
+    "price": {
+      "type": "float"
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "kind": "collectionType",
+  "collectionName": "totals",
+  "info": {
+    "name": "Total"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "customer": {
+      "model": "customer"
+    },
+    "room": {
+      "model": "room"
+    },
+    "total": {
+      "type": "float"
+    }
+  }
+}

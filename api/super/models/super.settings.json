@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "supers",
+  "info": {
+    "name": "Super"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "users_permissions_user": {
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "body": {
+      "type": "richtext"
+    }
+  }
+}

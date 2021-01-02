@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "rooms",
+  "info": {
+    "name": "Room"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "roomnumber": {
+      "type": "integer",
+      "unique": true,
+      "required": true,
+      "default": 0,
+      "min": 0
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "Rented",
+        "Maintainance",
+        "Available"
+      ],
+      "unique": false,
+      "required": true,
+      "default": "Available"
+    },
+    "floor_number": {
+      "model": "floor-number"
+    }
+  }
+}

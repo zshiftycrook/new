@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/floor-numbers",
+      "handler": "floor-number.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/floor-numbers/count",
+      "handler": "floor-number.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/floor-numbers/:id",
+      "handler": "floor-number.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/floor-numbers",
+      "handler": "floor-number.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/floor-numbers/:id",
+      "handler": "floor-number.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/floor-numbers/:id",
+      "handler": "floor-number.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

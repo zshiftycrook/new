@@ -1,0 +1,22 @@
+{
+  "kind": "collectionType",
+  "collectionName": "alerts",
+  "info": {
+    "name": "Alert",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "users_permissions_user": {
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "body": {
+      "type": "richtext"
+    }
+  }
+}

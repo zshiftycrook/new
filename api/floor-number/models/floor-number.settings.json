@@ -1,0 +1,22 @@
+{
+  "kind": "collectionType",
+  "collectionName": "floor_numbers",
+  "info": {
+    "name": "FloorNumber"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "floor": {
+      "type": "integer",
+      "unique": true,
+      "required": true
+    },
+    "price": {
+      "type": "float"
+    }
+  }
+}

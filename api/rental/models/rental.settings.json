@@ -1,0 +1,38 @@
+{
+  "kind": "collectionType",
+  "collectionName": "rentals",
+  "info": {
+    "name": "Rental",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "customer": {
+      "model": "customer"
+    },
+    "users_permissions_user": {
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "starting": {
+      "type": "date"
+    },
+    "ends": {
+      "type": "date"
+    },
+    "price": {
+      "type": "float"
+    },
+    "passed": {
+      "type": "boolean",
+      "default": false
+    },
+    "room": {
+      "model": "room"
+    }
+  }
+}

@@ -68,6 +68,23 @@
       "type": "string",
       "unique": true,
       "required": true
+    },
+    "Autorization": {
+      "type": "enumeration",
+      "enum": [
+        "Marketer",
+        "Manager",
+        "Finance"
+      ]
+    },
+    "phonenumber": {
+      "type": "string"
+    },
+    "city": {
+      "type": "string"
+    },
+    "country": {
+      "type": "string"
     }
   }
 }

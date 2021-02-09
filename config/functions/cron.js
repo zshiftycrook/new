@@ -38,7 +38,7 @@ module.exports =  {
    * Every monday at 1am.
    */
  
-  '* * */24 * * *': async() => { //every 24 hours
+  '* */24 * * *': async() => { //every 24 hours
     console.log('Daily Rental Check')
       var x = await checkRental();
      for (var i =0;x[i]!=undefined;i++){

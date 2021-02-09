@@ -78,13 +78,25 @@
       ]
     },
     "phonenumber": {
-      "type": "string"
+      "type": "string",
+      "regex": "(\\+\\s*2\\s*5\\s*1\\s*9\\s*(([0-9]\\s*){8}\\s*))|(0\\s*9\\s*(([0-9]\\s*){8}))",
+      "required": true,
+      "unique": true
     },
     "city": {
       "type": "string"
     },
     "country": {
       "type": "string"
+    },
+    "picture": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": false
     }
   }
 }

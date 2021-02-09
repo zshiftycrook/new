@@ -19,7 +19,8 @@
       "model": "user"
     },
     "starting": {
-      "type": "date"
+      "type": "date",
+      "required": true
     },
     "ends": {
       "type": "date"

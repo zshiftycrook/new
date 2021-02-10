@@ -48,13 +48,15 @@ module.exports =  {
           {
             status: 'Available'
           })
+          strapi.query('Rental').update(
+            {id: x[i].id},
+            {
+              passed: true
+            }
+          )
        }
-       strapi.query('Rental').update(
-         {id: x[i].id},
-         {
-           passed: true
-         }
-       )
+       
+      
      }
   }
   

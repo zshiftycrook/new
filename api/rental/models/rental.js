@@ -7,10 +7,13 @@
 function getRoom(data){
     return (strapi.query('Room').find({id: data})) // check for a solution for the whole run
    }
+function getCusomer(data){
+    return (strapi.query('Customer').find({id: data.customer}))
+}
 
 async function checkerented (data){
     var x = await getRoom(data)
-    console.log(x[0].status)
+    //console.log(x[0].status)
  if (x[0].status == 'Rented'){
      console.log("**************")
      return false;
@@ -18,6 +21,22 @@ async function checkerented (data){
  else {
      return true;
  }
+}
+async function checkestatus(data){
+    console.log(data.customer)
+    var x = await getCusomer(data);
+    console.log(x[0].Status)
+    
+    if(x[0].Status == 'Suspended')
+    {
+        
+        console.log("suspende")
+        return false;
+    }
+    else
+    {
+        return true;
+    }
 }
 function checkDate(ends,starts){
     const dateFromAPI = ends;
@@ -45,19 +64,29 @@ module.exports = {
             var x =await checkerented(data.room)
            if (x){ //if it is rented
                 //console.log(data)
+                var y=await(checkDate(data.ends,data.starting))
+                if(y){ //if the end is greater than starting
+                    throw new Error('Date is not properly inputeed')
+                }
+                var j= await(checkestatus(data))
+                if(!j){
+                    throw new Error('Customer Has been suspended')
+                }
+                else{
+                    strapi.query('Customer').update(
+                        {id: data.customer},
+                        {
+                          Status: 'Active'
+                        })
+
+                }
             }
             else {
                 throw new Error('Room is Rented');
             }
           
         } , 
-        async beforeCreate(data){
-            var x=await(checkDate(data.ends,data.starting))
-            if(x){ //if the end is greater than starting
-                throw new Error('Date is not properly inputeed')
-            }
-            
-        },
+    
         async afterCreate(results){
             console.log(results.room.id)
             strapi.query('Room').update(

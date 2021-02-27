@@ -13,7 +13,7 @@ function getCusomer(data){
 
 async function checkerented (data){
     var x = await getRoom(data)
-    //console.log(x[0].status)
+    console.log(x[0].status)
  if (x[0].status == 'Rented'){
      console.log("**************")
      return false;
@@ -66,7 +66,7 @@ module.exports = {
                 //console.log(data)
                 var y=await(checkDate(data.ends,data.starting))
                 if(y){ //if the end is greater than starting
-                    throw new Error('Date is not properly inputeed')
+                    throw  Error('Date is not properly inputeed')
                 }
                 var j= await(checkestatus(data))
                 if(!j){
